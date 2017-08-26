@@ -3,6 +3,13 @@
     margin-bottom: 0;
     background-color: #fff;
     border-bottom: 2px solid #ccc;
+    .header-site-name-link {
+      background-color: #fff;
+      color: #000;
+    }
+    .header-site-name-link:hover {
+      color: #ccc;
+    }
   }
   @media (min-width:375px) {
   }
