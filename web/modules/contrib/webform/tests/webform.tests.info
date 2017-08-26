@@ -1,0 +1,34 @@
+[WebformComponentsTestCase]
+name = Webform components
+description = Add and remove components from a webform.
+group = Webform
+file = WebformComponentsTestCase.test
+
+[WebformConditionalsTestCase]
+name = Webform Conditionals
+description = Generates webforms to test conditional showing and hiding of fields.
+group = Webform
+file = WebformConditionalsTestCase.test
+
+[WebformGeneralTestCase]
+name = Webform General
+description = Checks global Webform settings and content types.
+group = Webform
+file = WebformGeneralTestCase.test
+
+[WebformPermissionsTestCase]
+name = Webform Permissions
+description = Create webforms and check editing and access permissions.
+group = Webform
+file = WebformPermissionsTestCase.test
+
+[WebformSubmissionTestCase]
+name = Webform Submission
+description = Submits a sample webform and checks the database integrity.
+group = Webform
+file = WebformSubmissionTestCase.test
+
+; Added by Backdrop CMS packaging script on 2017-08-20
+project = webform
+version = 1.x-1.6.1
+timestamp = 1503280666
