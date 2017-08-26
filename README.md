@@ -12,14 +12,12 @@ Spin up Project on Lando
 
 Theme Workflow
 --------------
-
+The `bfg` theme is using `sass` and `gulp` to manage css.
 To compile and watch the `sass` files:
 
 ```bash
 lando gulp
 ```
-
-The `bfg` theme is using `sass` and `gulp` to manage css.
 
 Using Drush
 -----------
