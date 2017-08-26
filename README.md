@@ -10,6 +10,17 @@ Spin up Project on Lando
 * `cd backdropforgood.org`
 * `lando start`
 
+Theme Workflow
+--------------
+
+To compile and watch the `sass` files:
+
+```bash
+lando gulp
+```
+
+The `bfg` theme is using `sass` and `gulp` to manage css.
+
 Using Drush
 -----------
 
