@@ -1,6 +1,11 @@
 /** body class for the home page **/
-.view-name-backdrops {
+.propose-project {
   @media (min-width:320px) {
+    .webform-component {
+      label {
+        display: block;
+      }
+    }
   }
   @media (min-width:375px) {
   }
