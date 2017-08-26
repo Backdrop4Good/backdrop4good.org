@@ -1,0 +1,23 @@
+@import 'partials/home';
+@import 'partials/menu';
+@import 'partials/header';
+@import 'partials/footer';
+
+body {
+  background-color: #afb4b0;
+  font-family: Osaka;
+  a {
+    color: #3c82a3;
+  }
+  .layout {
+    .l-container {
+      .l-content {
+        margin-left: 13px;
+        margin-right: 13px;
+        background-color: #afb4b0;
+        padding: 11px;
+        min-height: 700px;
+      }
+    }
+  }
+}

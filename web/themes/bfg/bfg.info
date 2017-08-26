@@ -1,0 +1,10 @@
+type = theme
+name = bfg
+description = BackdropForGood subtheme of basis.
+backdrop = 1.x
+base theme = basis
+version = BACKDROP_VERSION
+
+
+; Add theme CSS files
+stylesheets[all][] = css/styles.css
