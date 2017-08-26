@@ -14,8 +14,9 @@ Using Drush
 -----------
 
 Drush is available from within the `web` directory.
-
-* `cd web`
+```bash
+cd web
+```
 * Clear cache:
 ```bash
 lando drush cc all
