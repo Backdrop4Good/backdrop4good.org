@@ -9,3 +9,6 @@ backdrop = 1.x
 stylesheets[screen][] = ../purple/css/reset.css
 stylesheets[screen][] = ../purple/css/purple.css
 stylesheets[screen][] = ../purple/css/style.css
+
+; Add bfg theme CSS files
+stylesheets[all][] = css/styles.css
