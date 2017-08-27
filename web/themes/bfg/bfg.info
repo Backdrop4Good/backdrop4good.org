@@ -1,10 +1,11 @@
 type = theme
-name = bfg
-description = BackdropForGood subtheme of basis.
+name = Backdrop for Good subtheme of Pretty in Purple
+description = A simple purple theme with fancy tags.
+base theme = purple
+version = 1.0
+core = 7.x
 backdrop = 1.x
-base theme = basis
-version = BACKDROP_VERSION
 
-
-; Add theme CSS files
-stylesheets[all][] = css/styles.css
+stylesheets[screen][] = ../purple/css/reset.css
+stylesheets[screen][] = ../purple/css/purple.css
+stylesheets[screen][] = ../purple/css/style.css

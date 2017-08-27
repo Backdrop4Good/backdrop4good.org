@@ -1,0 +1,15 @@
+type = theme
+name = Pretty in Purple
+description = A simple purple theme with fancy tags.
+version = 1.0
+core = 7.x
+backdrop = 1.x
+
+stylesheets[screen][] = css/reset.css
+stylesheets[screen][] = css/purple.css
+stylesheets[screen][] = css/style.css
+
+; Added by Backdrop CMS packaging script on 2016-05-19
+project = purple
+version = 1.x-1.0.0
+timestamp = 1463714256

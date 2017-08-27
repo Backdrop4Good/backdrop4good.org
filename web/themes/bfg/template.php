@@ -1,5 +1,4 @@
 <?php
 /**
- * @file
- * serundeputy basis subtheme template.php file.
+ * Backdrop for Good: Theme system functions.
  */
