@@ -1,3 +1,11 @@
+# Ignore active config.
+config/active
+
+# Ignore devel #
+################
+web/modules/contrib/devel
+config/staging/devel.settings.json
+
 # node_modules #
 ################
 node_modules
