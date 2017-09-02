@@ -1,0 +1,6 @@
+name = Google Analytics
+description = Adds a Google Analytics JavaScript tracking code to every page.
+backdrop = 1.x
+package = Statistics
+type = module
+configure = admin/config/system/googleanalytics
