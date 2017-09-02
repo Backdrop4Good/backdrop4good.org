@@ -1,5 +1,13 @@
 .l-header {
   @media (min-width:320px) {
+    .site-name {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 3.3em;
+        a {
+          color: #000;
+        }
+      }
   }
   @media (min-width:375px) {
   }

@@ -50,6 +50,7 @@
     <title><?php print $head_title; ?></title>
     <?php print backdrop_get_css(); ?>
     <?php print backdrop_get_js(); ?>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   </head>
   <body class="<?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($body_attributes); ?>>
     <?php print $page; ?>
