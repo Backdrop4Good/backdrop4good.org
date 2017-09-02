@@ -14,13 +14,21 @@ body {
     }
     .l-page-title {
       text-align: center;
+      padding-top: 5px;
     }
   .l-content {
     font-size: 1.4em;
-    .form-actions {
-      input.button-primary {
-        border-color: #000;
-        background: #931621;
+    form {
+      background: #eff4f5;
+      border: 1px solid #969696;
+      padding: 13px 25px 13px 25px;
+      font-size: 16px;
+      font-family: Georgia, serif;
+      .form-actions {
+        input.button-primary {
+          border-color: #000;
+          background: #931621;
+        }
       }
     }
   }
