@@ -14,7 +14,11 @@ body {
     }
     .l-page-title {
       text-align: center;
-      padding-top: 5px;
+      h1.page-title {
+        border: none;
+        margin-bottom: 0px;
+        margin-top: 16px;
+      }
     }
   .l-content {
     font-size: 1.4em;
