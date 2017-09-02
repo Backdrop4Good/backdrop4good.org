@@ -1,0 +1,11 @@
+{
+    "_config_name": "block.custom.footer",
+    "delta": "footer",
+    "info": "footer",
+    "title": "",
+    "body": {
+        "value": "<div class=\"bd4g-footer\">\r\n<p>Powered by <a href=\"http://www.backdropcms.org\">Backdrop CMS</a></p>\r\n<p>Follow us on <a href=\"http://www.twitter.com/backdrop4good\">Twitter</a></p>\r\n</div>",
+        "format": "full_html"
+    },
+    "description": "A reusable custom block."
+}
