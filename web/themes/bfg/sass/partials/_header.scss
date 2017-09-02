@@ -3,19 +3,40 @@
     .site-name {
       font-family: Georgia, serif;
       font-weight: normal;
-      font-size: 3.3em;
+      font-size: 2.3em;
         a {
           color: #000;
         }
+        a:hover {
+          text-decoration: none;
+          color: #931621;
+        }
+      }
+      .bd-plus-heart {
+        width: 8em;
       }
   }
   @media (min-width:375px) {
   }
   @media (min-width:667px) {
+    .site-name {
+      font-size: 3.3em;
+    }
+    .bd-plus-heart {
+      width: 10em;
+      padding-top: 1px;
+    }
   }
   @media (min-width:768px) {
   }
   @media (min-width:1024px) {
+    .site-name {
+      font-size: 4em;
+    }
+    .bd-plus-heart {
+      width: 12em;
+      padding-top: 5px;
+    }
   }
   @media (min-width: 1366px) {
   }

@@ -1,0 +1,11 @@
+{
+    "_config_name": "block.custom.logo_icons",
+    "delta": "logo_icons",
+    "info": "logo icons",
+    "title": "",
+    "body": {
+        "value": "<div class=logo-icons>\r\n<img class=\"bd-plus-heart\" src=\"/files/icons/logo-icons.png\"  />\r\n</div>",
+        "format": "full_html"
+    },
+    "description": "A reusable custom block."
+}

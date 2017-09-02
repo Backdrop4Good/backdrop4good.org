@@ -16,7 +16,8 @@
     },
     "positions": {
         "header": [
-            "84c43df4-1165-4faf-8700-c362a7153c0b"
+            "84c43df4-1165-4faf-8700-c362a7153c0b",
+            "e5901c08-bc7c-4bff-a830-48edaca97863"
         ],
         "top": [],
         "content": [
@@ -47,6 +48,32 @@
                     "contexts": []
                 },
                 "uuid": "84c43df4-1165-4faf-8700-c362a7153c0b",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": ""
+                        }
+                    }
+                }
+            }
+        },
+        "e5901c08-bc7c-4bff-a830-48edaca97863": {
+            "plugin": "block:logo_icons",
+            "data": {
+                "module": "block",
+                "delta": "logo_icons",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": {
+                        "delta": "logo_icons",
+                        "reusable": true
+                    },
+                    "contexts": []
+                },
+                "uuid": "e5901c08-bc7c-4bff-a830-48edaca97863",
                 "style": {
                     "plugin": "default",
                     "data": {

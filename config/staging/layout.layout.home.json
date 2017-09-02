@@ -8,7 +8,7 @@
     "weight": 0,
     "storage": 2,
     "layout_template": "boxton",
-    "disabled": false,
+    "disabled": true,
     "settings": {
         "title": "Welcome to Backdrop",
         "title_display": "none",
@@ -17,6 +17,7 @@
     "positions": {
         "header": [
             "9bd5a524-3670-4922-8b12-18b00a2858b9",
+            "cf1f122a-19d0-43ed-a800-aad3544f78b3",
             "9aece1df-ac4f-44a6-8b0c-12a7f6a1fb21"
         ],
         "top": [
@@ -50,6 +51,32 @@
                     "contexts": []
                 },
                 "uuid": "9bd5a524-3670-4922-8b12-18b00a2858b9",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": ""
+                        }
+                    }
+                }
+            }
+        },
+        "cf1f122a-19d0-43ed-a800-aad3544f78b3": {
+            "plugin": "block:logo_icons",
+            "data": {
+                "module": "block",
+                "delta": "logo_icons",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": {
+                        "delta": "logo_icons",
+                        "reusable": true
+                    },
+                    "contexts": []
+                },
+                "uuid": "cf1f122a-19d0-43ed-a800-aad3544f78b3",
                 "style": {
                     "plugin": "default",
                     "data": {
