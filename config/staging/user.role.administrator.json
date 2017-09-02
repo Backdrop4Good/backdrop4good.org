@@ -84,6 +84,11 @@
         "edit own webform submissions",
         "delete own webform submissions",
         "edit webform components",
-        "administer smtp module"
+        "administer smtp module",
+        "administer honeypot",
+        "bypass honeypot protection",
+        "administer google analytics",
+        "opt-in or out of tracking",
+        "use PHP for tracking visibility"
     ]
 }
