@@ -12,7 +12,16 @@ body {
     a {
       color: #931621;
     }
+    .l-page-title {
+      text-align: center;
+    }
   .l-content {
     font-size: 1.4em;
+    .form-actions {
+      input.button-primary {
+        border-color: #000;
+        background: #931621;
+      }
+    }
   }
 }
