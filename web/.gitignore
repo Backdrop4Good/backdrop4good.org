@@ -7,3 +7,4 @@ sites/*/settings*.php
 /private
 sites/*/files
 sites/*/private
+.DS_Store
