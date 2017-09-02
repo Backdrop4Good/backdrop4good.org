@@ -1,11 +1,14 @@
 /** body class for the home page **/
-.propose-project {
+.homepage {
   @media (min-width:320px) {
-    .webform-component {
-      label {
-        display: block;
-      }
+    .page-title {
+      display: none;
     }
+    // .webform-component {
+    //   label {
+    //     display: block;
+    //   }
+    // }
   }
   @media (min-width:375px) {
   }
