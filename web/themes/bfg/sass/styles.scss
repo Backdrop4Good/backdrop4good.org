@@ -12,7 +12,28 @@ body {
     a {
       color: #931621;
     }
+    .l-page-title {
+      text-align: center;
+      h1.page-title {
+        border: none;
+        margin-bottom: 0px;
+        margin-top: 16px;
+      }
+    }
   .l-content {
     font-size: 1.4em;
+    form {
+      background: #eff4f5;
+      border: 1px solid #969696;
+      padding: 13px 25px 13px 25px;
+      font-size: 16px;
+      font-family: Georgia, serif;
+      .form-actions {
+        input.button-primary {
+          border-color: #000;
+          background: #931621;
+        }
+      }
+    }
   }
 }
