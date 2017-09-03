@@ -4,7 +4,7 @@
     "info": "Nav Call to Action Icons",
     "title": "",
     "body": {
-        "value": "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col nav-apply-for-assistance\">\r\n<div class=\"pencil-icon nav-circle\">\r\n<webicon icon=\"simple-line:pencil\"/>\r\n</div>\r\n      <a href=\"/node/3\">Apply<br />for<br />Assistance</a>\r\n    </div>\r\n    <div class=\"col nav-volunteer\">\r\n<div class=\"puzzle-icon nav-circle\">\r\n     <webicon icon=\"simple-line:puzzle\" class=\"puzzle-piece\"/>\r\n</div>\r\n      <a href=\"/webform/volunteer\">Volunteer</a>\r\n    </div>\r\n    <div class=\"col nav-partners\">\r\n<div class=\"badge-icon nav-circle\">\r\n    <webicon icon=\"simple-line:badge\"/>\r\n</div>\r\n      <a href=\"/partners\">Our Projects<br />and<br />Nonprofit Partners</a>\r\n    </div>\r\n  </div>\r\n</div>",
+        "value": "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col nav-apply-for-assistance nav-cta\">\r\n<div class=\"pencil-icon nav-circle\">\r\n<webicon icon=\"simple-line:pencil\"/>\r\n</div>\r\n      <a href=\"/node/3\">Apply<br />for<br />Assistance</a>\r\n    </div>\r\n    <div class=\"col nav-volunteer nav-cta\">\r\n<div class=\"puzzle-icon nav-circle\">\r\n     <webicon icon=\"simple-line:puzzle\" class=\"puzzle-piece\"/>\r\n</div>\r\n      <a href=\"/webform/volunteer\">Volunteer</a>\r\n    </div>\r\n    <div class=\"col nav-partners nav-cta\">\r\n<div class=\"badge-icon nav-circle\">\r\n    <webicon icon=\"simple-line:badge\"/>\r\n</div>\r\n      <a href=\"/partners\">Our Projects<br />and<br />Nonprofit Partners</a>\r\n    </div>\r\n  </div>\r\n</div>",
         "format": "full_html"
     },
     "description": "A reusable custom block."
