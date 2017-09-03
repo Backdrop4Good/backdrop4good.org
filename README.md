@@ -1,7 +1,7 @@
 Backdrop for Good
 -----------------
 
-Backdrop for Good website.
+Backdrop 4 Good website.
 
 Spin up Project on Lando
 ---------------
@@ -34,3 +34,13 @@ lando drush cc all
 ```bash
 lando drush dl {module_name}
 ```
+
+Configuration Workflow
+----------------------
+
+* Make config changes in the Backdrop UI on your local dev environment.
+* Once complete export the configuration:
+  * `lando drush bcex`
+  * Add and commit to git
+  * push up to github, pull down to server and then import the config
+    * `drush bcim`
