@@ -59,6 +59,13 @@ body {
     .nav-circle {
       position: relative;
       left: 7%;
+      .puzzle-piece {
+        svg {
+          position: relative;
+          top: 8px;
+          right: 3px;
+        }
+      }
     }
   }
 }
