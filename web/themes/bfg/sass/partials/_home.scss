@@ -4,6 +4,13 @@
     .page-title {
       display: none;
     }
+    .nav-apply-for-assistance,
+    .nav-volunteer,
+    .nav-partners {
+      margin-left: auto;
+      margin-right: auto;
+      width: 33%;
+    }
   }
   @media (min-width:375px) {
   }
