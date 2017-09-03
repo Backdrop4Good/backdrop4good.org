@@ -35,5 +35,20 @@ body {
         }
       }
     }
+    webicon {
+      width: 38%;
+      border: 6px solid #000;
+      border-radius: 50%;
+      padding: 23px;
+      margin-left: 45px;
+    }
+    .nav-apply-for-assistance,
+    .nav-volunteer,
+    .nav-partners {
+      p {
+        font-weight: 600;
+        text-align: center;
+      }
+    }
   }
 }
