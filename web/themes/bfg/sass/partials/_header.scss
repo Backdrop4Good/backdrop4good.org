@@ -4,7 +4,7 @@
     .site-name {
       font-family: Georgia, serif;
       font-weight: normal;
-      font-size: 2.3em;
+      font-size: 2.7em;
         a {
           color: #000;
         }
@@ -14,21 +14,22 @@
         }
       }
       .bd-plus-heart {
-        width: 7em;
+        width: 8.3em;
       }
   }
   @media (min-width:375px) {
   }
   @media (min-width:667px) {
     .site-name {
-      font-size: 3.3em;
+      font-size: 4em;
     }
     .bd-plus-heart {
-      width: 10em;
+      width: 12.3em;
       padding-top: 2px;
     }
   }
   @media (min-width:768px) {
+    padding-top: 25px;
   }
   @media (min-width:1024px) {
     .site-name {
@@ -40,6 +41,7 @@
     }
   }
   @media (min-width: 1366px) {
+    padding-top: 40px;
   }
   @media (min-width: 1877px) {
   }

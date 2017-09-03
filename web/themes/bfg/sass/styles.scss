@@ -35,30 +35,35 @@ body {
         }
       }
     }
-    webicon {
-      width: 38%;
-      border: 6px solid #000;
-      border-radius: 50%;
-      padding: 23px;
-      margin-left: 45px;
-    }
-    .nav-apply-for-assistance,
-    .nav-volunteer,
-    .nav-partners {
-      p {
-        font-weight: 600;
-        text-align: center;
-      }
-    }
   }
 }
 
 @media (min-width:320px) {
+  .block-block-nav-call-to-action-icons {
+    margin-top: 10px;
+  }
+  webicon {
+    width: 33%;
+    border: 4px solid #000;
+    border-radius: 50%;
+    padding: 20px;
+    margin-left: 45px;
+  }
+  .nav-apply-for-assistance,
+  .nav-volunteer,
+  .nav-partners {
+    p {
+      font-weight: 600;
+      text-align: center;
+      margin-top: 5px;
+    }
+  }
   .nav-cta {
     width: 100%;
     .nav-circle {
       position: relative;
-      left: 7%;
+      left: 13%;
+      width: 80%;
       .puzzle-piece {
         svg {
           position: relative;
@@ -67,22 +72,51 @@ body {
         }
       }
     }
+    .pencil-icon.nav-circle a {
+      color: #000;
+    }
+    .puzzle-icon.nav-circle a {
+      color: #000;
+    }
+    .badge-icon.nav-circle a {
+      color: #000;
+    }
   }
 }
 @media (min-width:375px) {
   .nav-cta {
     .nav-circle {
-      left: 11%;
+      left: 18%;
+    }
+  }
+}
+@media (min-width:568px) {
+  .nav-cta {
+    .nav-circle {
+      left: 21%;
     }
   }
 }
 @media (min-width:667px) {
+  .nav-cta {
+    .nav-circle {
+      left: 23%;
+      webicon {
+        padding: 28px;
+      }
+    }
+  }
 }
 @media (min-width:768px) {
   .nav-cta {
-    width: 33%;
+    width: 30%;
     .nav-circle {
       position: initial;
+      width: 100%;
+      left: 2%;
+      webicon {
+        padding: 18px;
+      }
     }
   }
 }
