@@ -1,10 +1,11 @@
 # Ignore active config.
 config/active
 
-# Ignore devel #
-################
+# Ignore config that shouldn't be versioned #
+#############################################
 web/modules/contrib/devel
 config/staging/devel.settings.json
+config/live-active/smtp.settings.json
 
 # node_modules #
 ################
