@@ -17,7 +17,7 @@ body {
       h1.page-title {
         border: none;
         margin-bottom: 0px;
-        margin-top: 16px;
+        margin-top: 20px;
       }
     }
   .l-content {
@@ -43,11 +43,10 @@ body {
     margin-top: 10px;
   }
   webicon {
-    width: 33%;
+    width: 40%;
     border: 4px solid #000;
     border-radius: 50%;
-    padding: 20px;
-    margin-left: 45px;
+    padding: 30px;
   }
   .nav-apply-for-assistance,
   .nav-volunteer,
@@ -61,9 +60,7 @@ body {
   .nav-cta {
     width: 100%;
     .nav-circle {
-      position: relative;
-      left: 13%;
-      width: 80%;
+      padding-left: 22%;
       .puzzle-piece {
         svg {
           position: relative;
@@ -86,41 +83,39 @@ body {
 @media (min-width:375px) {
   .nav-cta {
     .nav-circle {
-      left: 18%;
+      padding-left: 25.5%
     }
   }
 }
 @media (min-width:568px) {
   .nav-cta {
     .nav-circle {
-      left: 21%;
+      padding-left: 29%
     }
   }
 }
-@media (min-width:667px) {
+@media (min-width:736px) {
   .nav-cta {
+    width: 33%;
     .nav-circle {
-      left: 23%;
-      webicon {
-        padding: 28px;
-      }
+      padding-left: 17%;
     }
   }
 }
 @media (min-width:768px) {
   .nav-cta {
-    width: 30%;
+    // width: 33%;
     .nav-circle {
-      position: initial;
-      width: 100%;
-      left: 2%;
-      webicon {
-        padding: 18px;
-      }
+      padding-left: 16%;
     }
   }
 }
 @media (min-width:1024px) {
+  .nav-cta {
+    .nav-circle {
+      padding-left: 19%;
+    }
+  }
 }
 @media (min-width: 1366px) {
 }
