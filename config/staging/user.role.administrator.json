@@ -89,6 +89,12 @@
         "bypass honeypot protection",
         "administer google analytics",
         "opt-in or out of tracking",
-        "use PHP for tracking visibility"
+        "use PHP for tracking visibility",
+        "access backup and migrate",
+        "perform backup",
+        "access backup files",
+        "delete backup files",
+        "restore from backup",
+        "administer backup and migrate"
     ]
 }

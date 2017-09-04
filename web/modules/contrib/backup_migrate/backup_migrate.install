@@ -1,0 +1,489 @@
+<?php
+
+
+/**
+ * @file
+ * Install hooks for Backup and Migrate.
+ */
+
+
+/**
+ * Implementation of hook_requirements().
+ */
+function backup_migrate_requirements($phase) {
+  $requirements = array();
+  return $requirements;
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function backup_migrate_schema() {
+  $schema['backup_migrate_profiles'] = array(
+    'export' => array(
+      'key' => 'machine_name',
+      'key name' => 'Profile ID',
+      'admin_title' => 'name',
+      'primary key' => 'profile_id',
+      'identifier' => 'item', // Exports will be defined as $preset
+      'default hook' => 'exportables_backup_migrate_profiles',  // Function hook name.
+      'api' => array(
+        'owner' => 'backup_migrate',
+        'api' => 'backup_migrate_exportables',  // Base name for api include files.
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+    'fields' => array(
+      'profile_id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary ID field for the table. Not used for anything except internal lookups.',
+        'no export' => TRUE, // Do not export database-only keys.
+      ),
+      'machine_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The primary identifier for a profile.',
+      ),
+      'name' => array(
+        'description' => 'The name of the profile.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'filename' => array(
+        'description' => 'The name of the profile.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'append_timestamp' => array(
+        'description' => 'Append a timestamp to the filename.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'timestamp_format' => array(
+        'description' => 'The format of the timestamp.',
+        'type' => 'varchar',
+        'length' => 14,
+        'not null' => TRUE
+      ),
+      'filters' => array(
+        'description' => 'The filter settings for the profile.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+        'serialized default' => 'a:0:{}',
+      ),
+    ),
+    'primary key' => array('profile_id'),
+  );
+  $schema['backup_migrate_destinations'] = array(
+    'export' => array(
+      'key' => 'machine_name',
+      'key name' => 'Destination ID',
+      'admin_title' => 'name',
+      'primary key' => 'destination_id',
+      'identifier' => 'item', // Exports will be defined as $preset
+      'default hook' => 'exportables_backup_migrate_destinations',  // Function hook name.
+      'api' => array(
+        'owner' => 'backup_migrate',
+        'api' => 'backup_migrate_exportables',  // Base name for api include files.
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+    'fields' => array(
+      'destination_id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary ID field for the table. Not used for anything except internal lookups.',
+        'no export' => TRUE, // Do not export database-only keys.
+      ),
+      'machine_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The primary identifier for a destination.',
+      ),
+      'name' => array(
+        'description' => 'The name of the destination.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'subtype' => array(
+        'description' => 'The type of the destination.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE
+      ),
+      'location' => array(
+        'description' => 'The the location string of the destination.',
+        'type' => 'text',
+        'not null' => TRUE
+      ),
+      'settings' => array(
+        'description' => 'Other settings for the destination.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+        'serialized default' => 'a:0:{}',
+     ),
+    ),
+    'primary key' => array('destination_id'),
+  );
+  $schema['backup_migrate_sources'] = array(
+    'export' => array(
+      'key' => 'machine_name',
+      'key name' => 'Source ID',
+      'admin_title' => 'name',
+      'primary key' => 'source_id',
+      'identifier' => 'item', // Exports will be defined as $preset
+      'default hook' => 'exportables_backup_migrate_sources',  // Function hook name.
+      'api' => array(
+        'owner' => 'backup_migrate',
+        'api' => 'backup_migrate_exportables',  // Base name for api include files.
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+    'fields' => array(
+      'source_id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary ID field for the table. Not used for anything except internal lookups.',
+        'no export' => TRUE, // Do not export database-only keys.
+      ),
+      'machine_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The primary identifier for a source.',
+      ),
+      'name' => array(
+        'description' => 'The name of the source.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'subtype' => array(
+        'description' => 'The type of the source.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE
+      ),
+      'location' => array(
+        'description' => 'The the location string of the source.',
+        'type' => 'text',
+        'not null' => TRUE
+      ),
+      'settings' => array(
+        'description' => 'Other settings for the source.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+        'serialized default' => 'a:0:{}',
+     ),
+    ),
+    'primary key' => array('source_id'),
+  );
+
+  $schema['backup_migrate_schedules'] = array(
+    'export' => array(
+      'key' => 'machine_name',
+      'key name' => 'Source ID',
+      'admin_title' => 'name',
+      'primary key' => 'schedule_id',
+      'identifier' => 'item', // Exports will be defined as $preset
+      'default hook' => 'exportables_backup_migrate_schedules',  // Function hook name.
+      'api' => array(
+        'owner' => 'backup_migrate',
+        'api' => 'backup_migrate_exportables',  // Base name for api include files.
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+    'fields' => array(
+      'schedule_id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary ID field for the table. Not used for anything except internal lookups.',
+        'no export' => TRUE, // Do not export database-only keys.
+      ),
+      'machine_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The primary identifier for a profile.',
+      ),
+      'name' => array(
+        'description' => 'The name of the profile.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE
+      ),
+      'source_id' => array(
+        'description' => 'The {backup_migrate_destination}.destination_id of the source to backup from.',
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => 'db',
+        'not null' => TRUE
+      ),
+      'destination_id' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The {backup_migrate_destination}.destination_id of the destination to back up to.',
+      ),
+      'copy_destination_id' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'A second {backup_migrate_destination}.destination_id of the destination to copy the backup to.',
+      ),
+      'profile_id' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0',
+        'description' => 'The primary identifier for a profile.',
+      ),
+      'keep' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The number of backups to keep.',
+      ),
+      'period' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The number of seconds between backups.',
+      ),
+      'enabled' => array(
+        'description' => 'Whether the schedule is enabled.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'cron' => array(
+        'description' => 'Whether the schedule should be run during cron.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => 'builtin',
+      ),
+      'cron_schedule' => array(
+        'description' => 'The cron schedule to run on.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '0 4 * * *',
+      ),
+    ),
+    'primary key' => array('schedule_id'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implementation of hook_install().
+ * Backdrop - save all intial DEFAULT settings to CMI .settings 
+ * commented out because now all settings are pulled from .json file but
+ * if new settings are needed or changed, set them below.
+ */
+function backup_migrate_install() {
+/*  $config = config('backup_migrate.settings');
+
+  $config->set('backup_migrate_data_rows_per_line', 30);
+  $config->set('backup_migrate_data_bytes_per_line', 2000);
+  $config->set('backup_migrate_max_email_size', 20971520);
+  $config->set('backup_migrate_allow_backup_to_file', TRUE);
+  $config->set('file_private_path', FALSE);
+  $config->set('file_public_path', FALSE);
+  $config->set('backup_migrate_allow_backup_to_download', TRUE);
+  $config->set('nodesquirrel_activate_url', 'http://manage.nodesquirrel.com/activate');
+  $config->set('nodesquirrel_manage_url', 'https://manage.nodesquirrel.com');
+  $config->set('nodesquirrel_schedule', 60*60*24);
+  $config->set('nodesquirrel_schedule_enabled', TRUE);
+  $config->set('nodesquirrel_schedule_source_id', 'db');
+  $config->set('nodesquirrel_secret_key', '');
+  $config->set('nodesquirrel_endpoint_urls', array());
+  $config->set('nodesquirrel_default_endpoint_urls', array('api.nodesquirrel.com/services/xmlrpc'));
+  $config->set('debug_http_request', FALSE);
+  $config->set('dev_query', 0);
+  $config->set('site_offline_message', '[site_name] is currently under maintenance. We should be back shortly. Thank you for your patience.');
+  $config->set('maintenance_mode', 0);
+  $config->set('maintenance_mode_message', NULL);
+  $config->set('backup_migrate_cleanup_time', 21600);
+  $config->set('backup_migrate_cleanup_temp_files', TRUE);
+  $config->set('backup_migrate_profile_id', 'default');
+  $config->set('backup_migrate_smart_keep_hourly', 24);
+  $config->set('backup_migrate_smart_keep_daily', 30);
+  $config->set('backup_migrate_smart_keep_weekly', PHP_INT_MAX);
+  $config->set('backup_migrate_schedule_buffer', 0.01);
+  $config->set('backup_migrate_data_rows_per_line', 30);
+  $config->set('backup_migrate_data_bytes_per_line', 2000);
+  $config->set('backup_migrate_default_schedule', 60*60);
+  $config->set('nodesquirrel_schedule_source_id', 'db');
+  $config->set('backup_migrate_source_id', NULL);
+  $config->set('backup_migrate_destination_id', 'download');
+  $config->set('backup_migrate_copy_destination_id', '');
+  $config->set('backup_migrate_backup_max_time', 1200);
+  $config->set('backup_migrate_restore_max_time', 1200);
+  $config->set('backup_migrate_timeout_buffer', 5);
+  $config->set('nodesquirrel_schedule_keep', -2);
+  $config->save();
+*/
+}
+
+/**
+ * Remove variables on uninstall.
+ */
+function backup_migrate_uninstall() {
+  db_query("DELETE FROM {variable} WHERE name LIKE 'backup_migrate_%'");
+  db_query("DELETE FROM {variable} WHERE name LIKE 'nodesquirrel_%'");
+  cache_clear_all('variables', 'cache');
+}
+
+/**
+ * Update Backdrop to use existing variables stored in CMI
+ */
+function backup_migrate_update_1000() {
+  $config = config('backup_migrate.settings');
+
+  $config->set('backup_migrate_data_rows_per_line', update_variable_get('backup_migrate_data_rows_per_line',30));
+  $config->set('backup_migrate_data_bytes_per_line', update_variable_get('backup_migrate_data_bytes_per_line',2000));
+  $config->set('backup_migrate_max_email_size', update_variable_get( 'backup_migrate_max_email_size',20971520));
+  $config->set('backup_migrate_allow_backup_to_file', update_variable_get('backup_migrate_allow_backup_to_file',TRUE));
+  $config->set('file_private_path', update_variable_get('file_private_path',FALSE));
+  $config->set('file_public_path', update_variable_get('file_public_path',FALSE));
+  $config->set('backup_migrate_allow_backup_to_download', update_variable_get('backup_migrate_allow_backup_to_download',TRUE));
+  $config->set('nodesquirrel_activate_url', update_variable_get('nodesquirrel_activate_url','http://manage.nodesquirrel.com/activate'));
+  $config->set('nodesquirrel_manage_url', update_variable_get('nodesquirrel_manage_url','https://manage.nodesquirrel.com'));
+  $config->set('nodesquirrel_schedule', update_variable_get('nodesquirrel_schedule',60*60*24));
+  $config->set('nodesquirrel_schedule_enabled', update_variable_get('nodesquirrel_schedule_enabled',TRUE));
+  $config->set('nodesquirrel_schedule_source_id', update_variable_get('nodesquirrel_schedule_source_id','db'));
+  $config->set('nodesquirrel_secret_key', update_variable_get('nodesquirrel_secret_key',''));
+  $config->set('nodesquirrel_endpoint_urls', update_variable_get('nodesquirrel_endpoint_urls',array()));
+  $config->set('nodesquirrel_default_endpoint_urls', update_variable_get('nodesquirrel_default_endpoint_urls',array('api.nodesquirrel.com/services/xmlrpc')));
+  $config->set('debug_http_request', update_variable_get('debug_http_request',FALSE));
+  $config->set('dev_query', update_variable_get('dev_query',0));
+  $config->set('site_offline_message', update_variable_get('site_offline_message','[site_name] is currently under maintenance. We should be back shortly. Thank you for your patience.'));
+  $config->set('maintenance_mode', update_variable_get('maintenance_mode',0));
+  $config->set('maintenance_mode_message', update_variable_get('maintenance_mode_message',NULL));
+  $config->set('backup_migrate_cleanup_time', update_variable_get('backup_migrate_cleanup_time',21600));
+  $config->set('backup_migrate_cleanup_temp_files', update_variable_get('backup_migrate_cleanup_temp_files', TRUE));
+  $config->set('backup_migrate_profile_id', update_variable_get('backup_migrate_profile_id','default'));
+  $config->set('backup_migrate_smart_keep_hourly', update_variable_get('backup_migrate_smart_keep_hourly',24));
+  $config->set('backup_migrate_smart_keep_daily', update_variable_get('backup_migrate_smart_keep_daily',30));
+  $config->set('backup_migrate_smart_keep_weekly', update_variable_get('backup_migrate_smart_keep_weekly',PHP_INT_MAX));
+  $config->set('backup_migrate_schedule_buffer', update_variable_get('backup_migrate_schedule_buffer',0.01));
+  $config->set('backup_migrate_data_rows_per_line', update_variable_get('backup_migrate_data_rows_per_line',30));
+  $config->set('backup_migrate_data_bytes_per_line', update_variable_get('backup_migrate_data_bytes_per_line',2000));
+  $config->set('backup_migrate_default_schedule', update_variable_get('backup_migrate_default_schedule',60*60));
+  $config->set('nodesquirrel_schedule_source_id', update_variable_get('nodesquirrel_schedule_source_id', 'db'));
+  $config->set('backup_migrate_source_id', update_variable_get('backup_migrate_source_id',NULL));
+  $config->set('backup_migrate_destination_id', update_variable_get('backup_migrate_destination_id','download'));
+  $config->set('backup_migrate_copy_destination_id', update_variable_get('backup_migrate_copy_destination_id',''));
+  $config->set('backup_migrate_backup_max_time', update_variable_get('backup_migrate_backup_max_time',1200));
+  $config->set('backup_migrate_restore_max_time', update_variable_get('backup_migrate_restore_max_time',1200));
+  $config->set('backup_migrate_timeout_buffer', update_variable_get('backup_migrate_timeout_buffer',5));
+  $config->set('nodesquirrel_schedule_keep', update_variable_get('nodesquirrel_schedule_keep',-2));
+
+  $config->save();
+  
+  // Delete variables
+  update_variable_del('backup_migrate_data_rows_per_line');
+  update_variable_del('backup_migrate_data_bytes_per_line');
+  update_variable_del('backup_migrate_max_email_size');
+  update_variable_del('backup_migrate_allow_backup_to_file');
+  update_variable_del('file_private_path');
+  update_variable_del('file_public_path');
+  update_variable_del('backup_migrate_allow_backup_to_download');
+  update_variable_del('nodesquirrel_activate_url');
+  update_variable_del('nodesquirrel_manage_url');
+  update_variable_del('nodesquirrel_schedule');
+  update_variable_del('nodesquirrel_schedule_enabled');
+  update_variable_del('nodesquirrel_schedule_source_id');
+  update_variable_del('nodesquirrel_secret_key');
+  update_variable_del('nodesquirrel_endpoint_urls');
+  update_variable_del('nodesquirrel_default_endpoint_urls');
+  update_variable_del('debug_http_request');
+  update_variable_del('dev_query');
+  update_variable_del('site_offline_message');
+  update_variable_del('maintenance_mode');
+  update_variable_del('maintenance_mode_message');
+  update_variable_del('backup_migrate_cleanup_time');
+  update_variable_del('backup_migrate_cleanup_temp_files');
+  update_variable_del('backup_migrate_profile_id');
+  update_variable_del('backup_migrate_smart_keep_hourly');
+  update_variable_del('backup_migrate_smart_keep_daily');
+  update_variable_del('backup_migrate_smart_keep_weekly');
+  update_variable_del('backup_migrate_schedule_buffer');
+  update_variable_del('backup_migrate_data_rows_per_line');
+  update_variable_del('backup_migrate_data_bytes_per_line');
+  update_variable_del('backup_migrate_default_schedule');
+  update_variable_del('nodesquirrel_schedule_source_id');
+  update_variable_del('backup_migrate_source_id');
+  update_variable_del('backup_migrate_destination_id');
+  update_variable_del('backup_migrate_copy_destination_id');
+  update_variable_del('backup_migrate_backup_max_time');
+  update_variable_del('backup_migrate_restore_max_time');
+  update_variable_del('backup_migrate_timeout_buffer');
+  update_variable_del('nodesquirrel_schedule_keep');
+}  
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function backup_migrate_update_last_removed() {
+  return 7303;
+}
+
+/**
+ * Update all schedules to use the built in cron if none is specified.
+ */
+function backup_migrate_update_1004() {
+  db_query("UPDATE {backup_migrate_schedules} SET cron = 'builtin' WHERE cron = '0'");
+}
+
+/**
+ * Fix schema mismatch after upgrade.
+ */
+function backup_migrate_update_1005() {
+  foreach (array('backup_migrate_profiles', 'backup_migrate_destinations', 'backup_migrate_sources', 'backup_migrate_schedules') as $table) {
+    db_change_field($table, 'machine_name', 'machine_name', array(
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      'default' => '0',
+    ));
+  }
+  db_change_field('backup_migrate_schedules', 'cron', 'cron', array(
+    'type' => 'varchar',
+    'length' => 32,
+    'not null' => TRUE,
+    'default' => 'builtin',
+  ));
+}
+
