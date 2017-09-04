@@ -6,9 +6,23 @@ Backdrop 4 Good website.
 Spin up Project on Lando
 ---------------
 
-* `git clone git@github.com:BackdropForGood/backdropforgood.org.git`
+* `git clone git@github.com:BackdropForGood/backdrop4good.org.git`
 * `cd backdropforgood.org`
+* Add in a `settings.php` to the `web` directory. The file that points to the
+  config (which is outside of the `web` directory).
+  * `wget https://github.com/backdrop/backdrop/raw/1.x/settings.php`
+  * Replace the config pointer lines with these:
+  ```bash
+  $config_directories['active'] = '../config/active';
+  $config_directories['staging'] = '../config/staging';
+  ```
 * `lando start`
+* Get a database from Backup and Migrate and import it into your local. After
+  downloading the DB put in the same directory as your `.lando.yml` file (the
+  project root). Then you can import the DB with:
+  ```bash
+  lando db-import <file.sql>
+  ```
 
 Theme Workflow
 --------------
