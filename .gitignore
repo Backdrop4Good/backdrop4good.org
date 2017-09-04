@@ -5,7 +5,7 @@ config/active
 #############################################
 web/modules/contrib/devel
 config/staging/devel.settings.json
-config/live-active/smtp.settings.json
+config/staging/smtp.settings.json
 
 # node_modules #
 ################
