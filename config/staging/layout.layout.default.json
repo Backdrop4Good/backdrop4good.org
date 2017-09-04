@@ -22,7 +22,8 @@
         "top": [],
         "content": [
             "default",
-            "8503c514-469a-4b0e-9c26-38ceda6b66ad"
+            "8503c514-469a-4b0e-9c26-38ceda6b66ad",
+            "b57480b7-f957-40e4-a700-b0e6bd4fd6d2"
         ],
         "bottom": [],
         "footer": [
@@ -131,7 +132,55 @@
                             "classes": ""
                         }
                     }
-                }
+                },
+                "conditions": [
+                    {
+                        "plugin": "front",
+                        "data": {
+                            "settings": {
+                                "negate": false,
+                                "load_condition_nojs": "Load condition"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "b57480b7-f957-40e4-a700-b0e6bd4fd6d2": {
+            "plugin": "block:one_liner_ctas",
+            "data": {
+                "module": "block",
+                "delta": "one_liner_ctas",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": {
+                        "delta": "one_liner_ctas",
+                        "reusable": true
+                    },
+                    "contexts": []
+                },
+                "uuid": "b57480b7-f957-40e4-a700-b0e6bd4fd6d2",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": ""
+                        }
+                    }
+                },
+                "conditions": [
+                    {
+                        "plugin": "front",
+                        "data": {
+                            "settings": {
+                                "negate": true,
+                                "load_condition_nojs": "Load condition"
+                            }
+                        }
+                    }
+                ]
             }
         },
         "52607de1-9e27-4b86-ad00-e33c980e3d31": {
