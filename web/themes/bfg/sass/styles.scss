@@ -40,13 +40,13 @@ body {
 
 @media (min-width:320px) {
   .block-block-nav-call-to-action-icons {
-    margin-top: 10px;
+    margin-top: 0px;
   }
   webicon {
-    width: 40%;
+    width: 29%;
     border: 4px solid #000;
     border-radius: 50%;
-    padding: 30px;
+    padding: 20px;
   }
   .nav-apply-for-assistance,
   .nav-volunteer,
@@ -60,7 +60,7 @@ body {
   .nav-cta {
     width: 100%;
     .nav-circle {
-      padding-left: 22%;
+      padding-left: 31%;
       .puzzle-piece {
         svg {
           position: relative;
@@ -83,14 +83,14 @@ body {
 @media (min-width:375px) {
   .nav-cta {
     .nav-circle {
-      padding-left: 25.5%
+      padding-left: 33.5%
     }
   }
 }
 @media (min-width:568px) {
   .nav-cta {
     .nav-circle {
-      padding-left: 29%
+      padding-left: 35%
     }
   }
 }
@@ -98,7 +98,7 @@ body {
   .nav-cta {
     width: 33%;
     .nav-circle {
-      padding-left: 17%;
+      padding-left: 27%;
     }
   }
 }
@@ -106,14 +106,14 @@ body {
   .nav-cta {
     // width: 33%;
     .nav-circle {
-      padding-left: 16%;
+      padding-left: 27%;
     }
   }
 }
 @media (min-width:1024px) {
   .nav-cta {
     .nav-circle {
-      padding-left: 19%;
+      padding-left: 30%;
     }
   }
 }
