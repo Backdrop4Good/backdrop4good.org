@@ -60,6 +60,3 @@ if (isset($_ENV['PLATFORM_VARIABLES'])) {
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($drupal_hash_salt)) {
   $drupal_hash_salt = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
-// Point to Backdrop config.
-$config_directories['active'] = '../config/active';
-$config_directories['staging'] = '../config/staging';
