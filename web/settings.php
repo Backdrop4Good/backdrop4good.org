@@ -30,7 +30,3 @@ $on_platformsh = !empty($_ENV['PLATFORM_PROJECT']);
 if (file_exists(__DIR__ . '/settings.local.php') && !$on_platformsh) {
   require_once(__DIR__ . '/settings.local.php');
 }
-
-// Point to Backdrop config.
-$config_directories['active'] = '../config/active';
-$config_directories['staging'] = '../config/staging';

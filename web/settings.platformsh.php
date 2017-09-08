@@ -29,6 +29,9 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       }
     }
   }
+  // Point to Backdrop config.
+  $config_directories['active'] = '../config/active';
+  $config_directories['staging'] = '../config/staging';
 }
 // Configure private and temporary file paths.
 if (isset($_ENV['PLATFORM_APP_DIR'])) {
