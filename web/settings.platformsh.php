@@ -29,6 +29,7 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       }
     }
   }
+  $settings['hash_salt'] = 'NMZwj_i-6Oj-lgX-aDY2VoGaYKd3oFT7dFbxRt1lKNo';
   // Point to Backdrop config.
   $config_directories['active'] = '../config/active';
   $config_directories['staging'] = '../config/staging';
