@@ -36,6 +36,7 @@ disk: 2048
 # strings such as 'shared:files/NAME' where NAME is just a unique name for the mount.
 mounts:
     '/web/files': 'shared:files/web-files'
+    '/config/active': 'shared:config/active'
 
 # The configuration of the application when it is exposed to the web.
 web:
