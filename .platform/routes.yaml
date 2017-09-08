@@ -1,5 +1,6 @@
 "https://{default}/":
     type: upstream
+    upstream: "backdrop4good:http"
 
 "https://www.{default}/":
     type: redirect
