@@ -1,7 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
-settings.local.php
+settings*.php
 sites/*/settings*.php
-!settings.platformsh.php
 
 # Ignore paths that contain user-generated content.
 /files
