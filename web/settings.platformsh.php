@@ -1,4 +1,13 @@
 <?php
+// DB Connection.
+// $DB_USER = getenv('DB_USER');
+// $DB_PASS = getenv('DB_PASS');
+// $DB_NAME = getenv('DB_NAME');
+$database = "mysql://main:@database.internal/main";
+
+// Point to Backdrop config.
+$config_directories['active'] = '../config/active';
+$config_directories['staging'] = '../config/staging';
 // Configure relationships.
 if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
   $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
@@ -29,6 +38,10 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       }
     }
   }
+  $settings['hash_salt'] = 'NMZwj_i-6Oj-lgX-aDY2VoGaYKd3oFT7dFbxRt1lKNo';
+  // Point to Backdrop config.
+  $config_directories['active'] = '../config/active';
+  $config_directories['staging'] = '../config/staging';
 }
 // Configure private and temporary file paths.
 if (isset($_ENV['PLATFORM_APP_DIR'])) {
@@ -60,6 +73,3 @@ if (isset($_ENV['PLATFORM_VARIABLES'])) {
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($drupal_hash_salt)) {
   $drupal_hash_salt = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
-// Point to Backdrop config.
-$config_directories['active'] = '../config/active';
-$config_directories['staging'] = '../config/staging';
