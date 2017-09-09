@@ -21,15 +21,9 @@
 ?>
 
   <?php if ($site_name): ?>
-    <?php if (!$is_front): ?>
-      <div class="site-name">
-        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home"><span><?php print $site_name; ?></span></a>
-      </div>
-    <?php else: /* Use h1 when the content title is empty */ ?>
-      <h1 class="site-name">
-        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home"><span><?php print $site_name; ?></span></a>
-      </h1>
-    <?php endif; ?>
+    <h1 class="site-name">
+      <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home"><span><?php print $site_name; ?></span></a>
+    </h1>
   <?php endif; ?>
 
   <div class="location">
