@@ -7,10 +7,12 @@
  * Add site-wide css here.
  */
 body {
+  .layout {
+    margin-top: 3%;
+  }
   background: #b1d8dc;
   color: #000;
   font-family: Source Sans Pro, sans-serif;
-  margin-top: 3%;
     a {
       color: #931621;
     }
@@ -42,7 +44,7 @@ body {
 
 @media (min-width:320px) {
   .block-block-nav-call-to-action-icons {
-    margin-top: 0px;
+    margin-top: -9px;
   }
   .webicon {
     width: 30%;
