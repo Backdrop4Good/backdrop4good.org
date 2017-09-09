@@ -15,6 +15,8 @@
       }
       .bd-plus-heart {
         width: 8.3em;
+        margin-top: -3px;
+        padding-left: 2px;
       }
   }
   @media (min-width:375px) {
@@ -23,6 +25,8 @@
     }
     .bd-plus-heart {
       width: 9em;
+      margin-top: -3px;
+      padding-left: 4px;
     }
   }
   @media (min-width:667px) {
@@ -32,7 +36,7 @@
     .bd-plus-heart {
       width: 12.3em;
       padding-left: 2px;
-      padding-top: 3px;
+      margin-top: 3px;
     }
   }
   @media (min-width:768px) {
@@ -45,7 +49,7 @@
     .bd-plus-heart {
       width: 14em;
       padding-left: 16px;
-      padding-top: 10px;
+      margin-top: 10px;
     }
   }
   @media (min-width: 1366px) {

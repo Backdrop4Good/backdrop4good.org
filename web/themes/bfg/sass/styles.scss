@@ -43,11 +43,14 @@ body {
   .block-block-nav-call-to-action-icons {
     margin-top: 0px;
   }
-  webicon {
+  .webicon {
     width: 29%;
     border: 4px solid #000;
     border-radius: 50%;
     padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .nav-apply-for-assistance,
   .nav-volunteer,
@@ -61,7 +64,6 @@ body {
   .nav-cta {
     width: 100%;
     .nav-circle {
-      padding-left: 31%;
       .puzzle-piece {
         svg {
           position: relative;
@@ -82,41 +84,17 @@ body {
   }
 }
 @media (min-width:375px) {
-  .nav-cta {
-    .nav-circle {
-      padding-left: 33.5%
-    }
-  }
 }
 @media (min-width:568px) {
   .nav-cta {
-    .nav-circle {
-      padding-left: 35%
-    }
+    width: 33%;
   }
 }
-@media (min-width:736px) {
-  .nav-cta {
-    width: 33%;
-    .nav-circle {
-      padding-left: 27%;
-    }
-  }
+@media (min-width:667px) {
 }
 @media (min-width:768px) {
-  .nav-cta {
-    // width: 33%;
-    .nav-circle {
-      padding-left: 27%;
-    }
-  }
 }
 @media (min-width:1024px) {
-  .nav-cta {
-    .nav-circle {
-      padding-left: 30%;
-    }
-  }
 }
 @media (min-width: 1366px) {
 }

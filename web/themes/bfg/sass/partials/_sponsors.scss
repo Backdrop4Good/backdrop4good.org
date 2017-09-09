@@ -5,6 +5,14 @@
       text-align: center;
       font-size: 2em;
     }
+    .img.tandem-icon,
+    .img.nerds-icon,
+    .img.platformsh-icon {
+      width: 75%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   @media (min-width:375px) {
   }
