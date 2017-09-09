@@ -2,6 +2,7 @@
 settings*.php
 sites/*/settings*.php
 !settings.platformsh.php
+!settings.php
 
 # Ignore paths that contain user-generated content.
 /files

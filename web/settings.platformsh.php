@@ -1,13 +1,5 @@
 <?php
-// DB Connection.
-// $DB_USER = getenv('DB_USER');
-// $DB_PASS = getenv('DB_PASS');
-// $DB_NAME = getenv('DB_NAME');
-$database = "mysql://main:@database.internal/main";
 
-// Point to Backdrop config.
-$config_directories['active'] = '../config/active';
-$config_directories['staging'] = '../config/staging';
 // Configure relationships.
 if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
   $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
@@ -38,38 +30,37 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       }
     }
   }
-  $settings['hash_salt'] = 'NMZwj_i-6Oj-lgX-aDY2VoGaYKd3oFT7dFbxRt1lKNo';
-  // Point to Backdrop config.
-  $config_directories['active'] = '../config/active';
-  $config_directories['staging'] = '../config/staging';
 }
+
 // Configure private and temporary file paths.
 if (isset($_ENV['PLATFORM_APP_DIR'])) {
-  if (!isset($conf['file_private_path'])) {
-    $conf['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
+  if (!isset($settings['file_private_path'])) {
+    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
   }
   if (!isset($conf['file_temporary_path'])) {
-    $conf['file_temporary_path'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
+    $settings['file_temporary_path'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
   }
 }
-// Import variables prefixed with 'drupal:' into $conf.
+
+// Import variables prefixed with 'backdrop:' into $settings.
 if (isset($_ENV['PLATFORM_VARIABLES'])) {
   $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), TRUE);
-  $prefix_len = strlen('drupal:');
-  $drupal_globals = array('cookie_domain', 'installed_profile', 'drupal_hash_salt', 'base_url');
+  $prefix_len = strlen('backdrop:');
+  $backdrop_globals = array('cookie_domain', 'installed_profile', 'drupal_hash_salt', 'base_url');
   foreach ($variables as $name => $value) {
-    if (substr($name, 0, $prefix_len) == 'drupal:') {
+    if (substr($name, 0, $prefix_len) == 'backdrop:') {
       $name = substr($name, $prefix_len);
-      if (in_array($name, $drupal_globals)) {
+      if (in_array($name, $backdrop_globals)) {
         $GLOBALS[$name] = $value;
       }
       else {
-        $conf[$name] = $value;
+        $settings[$name] = $value;
       }
     }
   }
 }
+
 // Set a default Drupal hash salt, based on a project-specific entropy value.
-if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($drupal_hash_salt)) {
-  $drupal_hash_salt = $_ENV['PLATFORM_PROJECT_ENTROPY'];
+if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($settings['hash_salt'])) {
+  $settings['hash_salt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
