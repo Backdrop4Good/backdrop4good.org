@@ -3,6 +3,9 @@
     font-family: Georgia, serif;
     .bd4g-footer {
       line-height: 7px;
+      .platform_sh_widget a {
+        line-height: 1.3em;
+      }
     }
   }
   @media (min-width:375px) {

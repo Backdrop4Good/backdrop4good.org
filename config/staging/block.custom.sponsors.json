@@ -4,7 +4,7 @@
     "info": "Sponsors",
     "title": "",
     "body": {
-        "value": "<div class=\"sponsor-block\">\r\n<hr class=\"horiz-style\">\r\n<div class=\"text-for-sponsors\"><p class=\"sponsor-text\">Our Generous Sponsors</p></div>\r\n<div class=\"tandem-icon-div\"><a href=\"http://www.thinktandem.io\"><img class=\"tandem-icon\" src=\"/files/icons/Artboard-tandem.png\"  /></a></div>\r\n<div class=\"nerds-icon-div\"><a href=\"http://www.nerdsummit.org\"><img class=\"nerds-icon\" src=\"/files/icons/header-logo@2x.png\"  /></a></div>\r\n<div class=\"platformsh-icon-div\"><a href=\"http://platform.sh/?utm_campaign=sponsored_sites&utm_source=backdropforgood\"><img class=\"platformsh-icon\" src=\"/files/icons/platformsh-logo-dark-2x.png\" /></a></div>\r\n\r\n</div>",
+        "value": "<div class=\"sponsor-block\">\r\n<hr class=\"horiz-style\">\r\n<div class=\"text-for-sponsors\"><p class=\"sponsor-text\">Our Generous Sponsors</p></div>\r\n<div class=\"tandem-icon-div sponsor-icon\"><a href=\"http://www.thinktandem.io\"><img class=\"tandem-icon\" src=\"/files/icons/Artboard-tandem.png\"  /></a></div>\r\n<div class=\"nerds-icon-div sponsor-icon\"><a href=\"http://www.nerdsummit.org\"><img class=\"nerds-icon\" src=\"/files/icons/header-logo@2x.png\"  /></a></div>\r\n<div class=\"platformsh-icon-div sponsor-icon\"><a href=\"http://platform.sh/?utm_campaign=sponsored_sites&utm_source=backdropforgood\"><img class=\"platformsh-icon\" src=\"/files/icons/platformsh-logo-dark-2x.png\" /></a></div>\r\n\r\n</div>",
         "format": "full_html"
     },
     "description": "A reusable custom block."

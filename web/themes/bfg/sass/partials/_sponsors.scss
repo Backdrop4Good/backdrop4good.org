@@ -5,20 +5,35 @@
       text-align: center;
       font-size: 2em;
     }
-    .img.tandem-icon,
-    .img.nerds-icon,
-    .img.platformsh-icon {
-      width: 75%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    .sponsor-icon {
+      padding-bottom: 7px;
+      img.tandem-icon,
+      img.nerds-icon,
+      img.platformsh-icon {
+        width: 75%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
   @media (min-width:375px) {
   }
   @media (min-width:667px) {
   }
-  @media (min-width:768px) {
+  @media (min-width:732px) {
+    .sponsor-icon {
+      width: 28%;
+      display: inline-block;
+      margin-left: 3.7%;
+      img.tandem-icon,
+      img.nerds-icon,
+      img.platformsh-icon {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
   }
   @media (min-width:1024px) {
   }
