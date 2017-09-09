@@ -10,7 +10,7 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
         if (empty($instance['scheme']) || ($instance['scheme'] !== 'mysql' && $instance['scheme'] !== 'pgsql')) {
           continue;
         }
-        $database = [
+        $db = [
           'driver' => $instance['scheme'],
           'database' => $instance['path'],
           'username' => $instance['username'],
@@ -22,10 +22,10 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
           $database['pdo'][PDO::MYSQL_ATTR_COMPRESS] = TRUE;
         }
         if (!empty($instance['query']['is_master'])) {
-          $databases[$drupal_key]['default'] = $database;
+          $databases[$drupal_key]['default'] = $db;
         }
         else {
-          $databases[$drupal_key]['slave'][] = $database;
+          $databases[$drupal_key]['slave'][] = $db;
         }
       }
     }
@@ -34,15 +34,15 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
 
 // Configure private and temporary file paths.
 if (isset($_ENV['PLATFORM_APP_DIR'])) {
-  if (!isset($settings['file_private_path'])) {
-    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
+  if (!isset($conf['file_private_path'])) {
+    $conf['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
   }
   if (!isset($conf['file_temporary_path'])) {
-    $settings['file_temporary_path'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
+    $conf['file_temporary_path'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
   }
 }
 
-// Import variables prefixed with 'backdrop:' into $settings.
+// Import variables prefixed with 'backdrop:' into $conf.
 if (isset($_ENV['PLATFORM_VARIABLES'])) {
   $variables = json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']), TRUE);
   $prefix_len = strlen('backdrop:');
@@ -54,13 +54,13 @@ if (isset($_ENV['PLATFORM_VARIABLES'])) {
         $GLOBALS[$name] = $value;
       }
       else {
-        $settings[$name] = $value;
+        $conf[$name] = $value;
       }
     }
   }
 }
 
-// Set a default Drupal hash salt, based on a project-specific entropy value.
+// Set a default hash salt, based on a project-specific entropy value.
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($settings['hash_salt'])) {
   $settings['hash_salt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
