@@ -18,6 +18,12 @@
       }
   }
   @media (min-width:375px) {
+    .site-name {
+      font-size: 3em;
+    }
+    .bd-plus-heart {
+      width: 9em;
+    }
   }
   @media (min-width:667px) {
     .site-name {
@@ -25,7 +31,8 @@
     }
     .bd-plus-heart {
       width: 12.3em;
-      padding-top: 8px;
+      padding-left: 2px;
+      padding-top: 3px;
     }
   }
   @media (min-width:768px) {
@@ -33,10 +40,12 @@
   }
   @media (min-width:1024px) {
     .site-name {
-      font-size: 4em;
+      font-size: 5em;
     }
     .bd-plus-heart {
-      width: 12.5em;
+      width: 14em;
+      padding-left: 16px;
+      padding-top: 10px;
     }
   }
   @media (min-width: 1366px) {

@@ -25,7 +25,9 @@
             "8503c514-469a-4b0e-9c26-38ceda6b66ad",
             "b57480b7-f957-40e4-a700-b0e6bd4fd6d2"
         ],
-        "bottom": [],
+        "bottom": [
+            "08b1bf0a-e3ca-4deb-9102-2a1b74aca3c1"
+        ],
         "footer": [
             "52607de1-9e27-4b86-ad00-e33c980e3d31"
         ],
@@ -181,6 +183,32 @@
                         }
                     }
                 ]
+            }
+        },
+        "08b1bf0a-e3ca-4deb-9102-2a1b74aca3c1": {
+            "plugin": "block:sponsors",
+            "data": {
+                "module": "block",
+                "delta": "sponsors",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": {
+                        "delta": "sponsors",
+                        "reusable": true
+                    },
+                    "contexts": []
+                },
+                "uuid": "08b1bf0a-e3ca-4deb-9102-2a1b74aca3c1",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": ""
+                        }
+                    }
+                }
             }
         },
         "52607de1-9e27-4b86-ad00-e33c980e3d31": {
