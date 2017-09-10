@@ -8,9 +8,14 @@
     .sponsor-icon {
       padding-bottom: 7px;
       img.tandem-icon,
-      img.nerds-icon,
       img.platformsh-icon {
-        width: 75%;
+        width: 78%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      img.nerds-icon {
+        width: 67%;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -23,9 +28,8 @@
   }
   @media (min-width:732px) {
     .sponsor-icon {
-      width: 28%;
       display: inline-block;
-      margin-left: 3.7%;
+      margin-left: 3.1%;
       img.tandem-icon,
       img.nerds-icon,
       img.platformsh-icon {
@@ -33,6 +37,15 @@
         margin-left: 0px;
         margin-right: 0px;
       }
+    }
+    .tandem-icon-div {
+      width: 30%;
+    }
+    .nerds-icon-div {
+      width: 24%;
+    }
+    .platformsh-icon-div {
+      width: 32%;
     }
   }
   @media (min-width:1024px) {
