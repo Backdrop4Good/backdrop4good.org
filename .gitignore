@@ -15,4 +15,12 @@ node_modules
 ##########
 vendor
 
+# OS Files #
+############
 .DS_Store
+
+# Backup Files #
+################
+*.sql
+*.gz
+*.tgz

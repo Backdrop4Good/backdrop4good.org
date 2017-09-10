@@ -1,4 +1,4 @@
-name: backdrop-for-good
+name: backdrop4good
 recipe: backdrop
 config:
   webroot: web
