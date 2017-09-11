@@ -53,4 +53,4 @@ web:
             root: 'web/files'
             scripts: false
             allow: true
-            #passthru: '/app.php' 
+            #passthru: '/app.php'
