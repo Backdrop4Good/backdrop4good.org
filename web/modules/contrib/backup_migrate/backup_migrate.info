@@ -5,7 +5,7 @@ type = module
 
 configure = admin/config/system/backup_migrate
 
-; Added by Backdrop CMS packaging script on 2017-01-16
+; Added by Backdrop CMS packaging script on 2017-09-27
 project = backup_migrate
-version = 1.x-1.0.10
-timestamp = 1484633804
+version = 1.x-1.0.11
+timestamp = 1506516408
