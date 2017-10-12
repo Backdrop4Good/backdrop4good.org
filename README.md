@@ -6,8 +6,8 @@ Backdrop 4 Good website.
 Spin up Project on Lando
 ---------------
 
-* `git clone git@github.com:BackdropForGood/backdrop4good.org.git`
-* `cd backdropforgood.org`
+* `git clone git@github.com:Backdrop4Good/backdrop4good.org.git`
+* `cd backdrop4good.org`
 * Add in a `settings.php` to the `web` directory. The file that points to the
   config (which is outside of the `web` directory).
   * `wget https://github.com/backdrop/backdrop/raw/1.x/settings.php`
