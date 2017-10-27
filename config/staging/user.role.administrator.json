@@ -95,6 +95,8 @@
         "access backup files",
         "delete backup files",
         "restore from backup",
-        "administer backup and migrate"
+        "administer backup and migrate",
+        "administer languages",
+        "translate interface"
     ]
 }

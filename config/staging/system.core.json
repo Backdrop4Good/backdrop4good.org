@@ -28,7 +28,7 @@
     "image_jpeg_quality": "75",
     "image_style_flood_limit": 5,
     "install_profile": "standard",
-    "language_count": 1,
+    "language_count": 2,
     "language_default": "en",
     "log_row_limit": 1000,
     "log_identity": "backdrop",
