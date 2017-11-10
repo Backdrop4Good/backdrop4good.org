@@ -6,12 +6,14 @@
     "language_negotiation_url_part": "path_prefix",
     "language_negotiation_url_prefixes": {
         "en": "",
-        "de": "de"
+        "de": "de",
+        "es": "es"
     },
     "language_negotiation_url_type": "language",
     "language_negotiation_url_domains": {
         "en": "",
-        "de": ""
+        "de": "",
+        "es": ""
     },
     "language_providers_weight_language": [],
     "translate_english": false
