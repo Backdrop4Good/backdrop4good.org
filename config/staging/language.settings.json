@@ -21,6 +21,13 @@
             "direction": 0,
             "enabled": true,
             "weight": 0
+        },
+        "es": {
+            "langcode": "es",
+            "name": "Spanish",
+            "direction": 0,
+            "enabled": true,
+            "weight": 0
         }
     }
 }
