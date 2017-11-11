@@ -19,13 +19,20 @@ relationships:
     database: 'database:mysql'
 
 # The hooks that will be triggered when the package is deployed.
-# hooks:
-#     # Build hooks can modify the application files on disk but not access any services like databases.
-#     build: |
-#       rm web/app_dev.php
-#     # Deploy hooks can access services but the file system is now read-only.
-#     deploy: |
-#       app/console --env=prod cache:clear
+hooks:
+    # Build hooks can modify the application files on disk but not access any services like databases.
+    build: |
+        set -e
+        # Install Drush integration for Backdrop
+        mkdir -p .drush/commands
+        cd .drush/commands
+        wget https://github.com/backdrop-contrib/drush/archive/1.x-0.x.zip
+        unzip 1.x-0.x.zip -d backdrop
+
+    deploy: |
+        cd /app/web
+        drush bcim -y
+        drush cc all
 
 
 # The size of the persistent disk of the application (in MB).
