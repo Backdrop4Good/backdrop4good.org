@@ -32,7 +32,7 @@
         "revision_default": 0,
         "node_submitted": 0,
         "node_user_picture": 0,
-        "language": 0,
+        "language": "2",
         "node_permissions": true
     },
     "module": "node",
