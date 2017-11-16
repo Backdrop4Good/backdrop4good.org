@@ -97,6 +97,7 @@
         "restore from backup",
         "administer backup and migrate",
         "administer languages",
-        "translate interface"
+        "translate interface",
+        "translate content"
     ]
 }
