@@ -1,7 +1,7 @@
 {
     "_config_name": "googleanalytics.settings",
     "_config_static": true,
-    "account": "UA-",
+    "account": "UA-109753166-1",
     "domain_mode": 0,
     "cross_domains": "",
     "visibility_pages": 0,
@@ -29,7 +29,7 @@
     "custom_dimension": [],
     "custom_metric": [],
     "cache": false,
-    "translation_set": null,
+    "translation_set": 0,
     "codesnippet_create": [],
     "codesnippet_before": "",
     "codesnippet_after": "",
