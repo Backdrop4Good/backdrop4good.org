@@ -7,13 +7,15 @@
     "language_negotiation_url_prefixes": {
         "en": "",
         "de": "de",
-        "es": "es"
+        "es": "es",
+        "fr": "fr"
     },
     "language_negotiation_url_type": "language",
     "language_negotiation_url_domains": {
         "en": "",
         "de": "",
-        "es": ""
+        "es": "",
+        "fr": ""
     },
     "language_providers_weight_language": [],
     "translate_english": false

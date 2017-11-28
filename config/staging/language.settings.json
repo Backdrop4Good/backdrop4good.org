@@ -28,6 +28,13 @@
             "direction": 0,
             "enabled": true,
             "weight": 0
+        },
+        "fr": {
+            "langcode": "fr",
+            "name": "French",
+            "direction": 0,
+            "enabled": true,
+            "weight": 0
         }
     }
 }
