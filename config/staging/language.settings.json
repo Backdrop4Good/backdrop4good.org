@@ -13,28 +13,35 @@
             "name": "English",
             "direction": 0,
             "enabled": true,
-            "weight": 0
+            "weight": "0"
         },
         "de": {
             "langcode": "de",
             "name": "German",
             "direction": 0,
-            "enabled": true,
-            "weight": 0
+            "enabled": 1,
+            "weight": "0"
         },
         "es": {
             "langcode": "es",
             "name": "Spanish",
             "direction": 0,
-            "enabled": true,
-            "weight": 0
+            "enabled": 1,
+            "weight": "0"
         },
         "fr": {
             "langcode": "fr",
             "name": "French",
             "direction": 0,
-            "enabled": true,
-            "weight": 0
+            "enabled": 1,
+            "weight": "0"
+        },
+        "el": {
+            "langcode": "el",
+            "name": "Greek",
+            "direction": 0,
+            "enabled": 1,
+            "weight": "0"
         }
     }
 }

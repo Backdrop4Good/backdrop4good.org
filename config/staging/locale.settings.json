@@ -8,14 +8,16 @@
         "en": "",
         "de": "de",
         "es": "es",
-        "fr": "fr"
+        "fr": "fr",
+        "el": "el"
     },
     "language_negotiation_url_type": "language",
     "language_negotiation_url_domains": {
         "en": "",
         "de": "",
         "es": "",
-        "fr": ""
+        "fr": "",
+        "el": ""
     },
     "language_providers_weight_language": [],
     "translate_english": false
