@@ -3,7 +3,7 @@
     "name": "node_admin_content",
     "description": "Administrative listing for managing content.",
     "module": "node",
-    "storage": 4,
+    "storage": 2,
     "tag": "default",
     "disabled": false,
     "base_table": "node",
@@ -122,6 +122,58 @@
                         "hide_alter_empty": 1,
                         "link_to_node": 0,
                         "machine_name": 0
+                    },
+                    "langcode": {
+                        "id": "langcode",
+                        "table": "node",
+                        "field": "langcode",
+                        "relationship": "none",
+                        "group_type": "group",
+                        "ui_name": "",
+                        "label": "Language",
+                        "exclude": 0,
+                        "alter": {
+                            "alter_text": 0,
+                            "text": "",
+                            "make_link": 0,
+                            "path": "",
+                            "absolute": 0,
+                            "external": 0,
+                            "replace_spaces": 0,
+                            "path_case": "none",
+                            "trim_whitespace": 0,
+                            "alt": "",
+                            "rel": "",
+                            "link_class": "",
+                            "prefix": "",
+                            "suffix": "",
+                            "target": "",
+                            "nl2br": 0,
+                            "max_length": "",
+                            "word_boundary": 1,
+                            "ellipsis": 1,
+                            "more_link": 0,
+                            "more_link_text": "",
+                            "more_link_path": "",
+                            "strip_tags": 0,
+                            "trim": 0,
+                            "preserve_tags": "",
+                            "html": 0
+                        },
+                        "element_type": "",
+                        "element_class": "",
+                        "element_label_type": "",
+                        "element_label_class": "",
+                        "element_label_colon": 1,
+                        "element_wrapper_type": "",
+                        "element_wrapper_class": "",
+                        "element_default_classes": 1,
+                        "empty": "",
+                        "hide_empty": 0,
+                        "empty_zero": 0,
+                        "hide_alter_empty": 1,
+                        "link_to_node": 0,
+                        "native_language": 0
                     },
                     "name": {
                         "id": "name",
@@ -313,7 +365,7 @@
                         "ui_name": "",
                         "operator": "in",
                         "value": [],
-                        "group": "1",
+                        "group": 1,
                         "exposed": true,
                         "expose": {
                             "operator_id": "type_op",
@@ -334,6 +386,48 @@
                         },
                         "is_grouped": false
                     },
+                    "langcode": {
+                        "id": "langcode",
+                        "table": "node",
+                        "field": "langcode",
+                        "relationship": "none",
+                        "group_type": "group",
+                        "ui_name": "",
+                        "operator": "in",
+                        "value": [],
+                        "group": 1,
+                        "exposed": true,
+                        "expose": {
+                            "operator_id": "langcode_op",
+                            "label": "Language",
+                            "description": "",
+                            "use_operator": 0,
+                            "operator": "langcode_op",
+                            "identifier": "langcode",
+                            "required": 0,
+                            "remember": 0,
+                            "multiple": 0,
+                            "remember_roles": {
+                                "authenticated": "authenticated",
+                                "anonymous": 0,
+                                "administrator": 0
+                            },
+                            "reduce": 0
+                        },
+                        "is_grouped": false,
+                        "group_info": {
+                            "label": "",
+                            "description": "",
+                            "identifier": "",
+                            "optional": true,
+                            "widget": "select",
+                            "multiple": false,
+                            "remember": 0,
+                            "default_group": "All",
+                            "default_group_multiple": [],
+                            "group_items": []
+                        }
+                    },
                     "title": {
                         "id": "title",
                         "table": "node",
@@ -343,7 +437,7 @@
                         "ui_name": "",
                         "operator": "word",
                         "value": "",
-                        "group": "1",
+                        "group": 1,
                         "exposed": true,
                         "expose": {
                             "operator_id": "title_op",
@@ -372,7 +466,7 @@
                         "ui_name": "",
                         "operator": "=",
                         "value": "",
-                        "group": "1",
+                        "group": 1,
                         "exposed": false,
                         "is_grouped": false
                     }
@@ -426,6 +520,7 @@
                         "bulk_form": "bulk_form",
                         "title": "title",
                         "type": "type",
+                        "langcode": "langcode",
                         "name": "name",
                         "status": "status",
                         "changed": "changed",
@@ -447,6 +542,13 @@
                             "empty_column": 0
                         },
                         "type": {
+                            "sortable": 1,
+                            "default_sort_order": "asc",
+                            "align": "",
+                            "separator": "",
+                            "empty_column": 0
+                        },
+                        "langcode": {
                             "sortable": 1,
                             "default_sort_order": "asc",
                             "align": "",
@@ -492,6 +594,12 @@
                     },
                     "default": "changed",
                     "empty_table": 1
+                },
+                "filter_groups": {
+                    "operator": "AND",
+                    "groups": {
+                        "1": "AND"
+                    }
                 }
             }
         },
