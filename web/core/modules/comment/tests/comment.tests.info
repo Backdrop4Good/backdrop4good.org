@@ -94,7 +94,7 @@ description = Tests the user posted or commented filter Views handler.
 group = Comment
 file = comment_views_handler_filter_user_uid.test
 
-; Added by Backdrop CMS packaging script on 2017-09-15
+; Added by Backdrop CMS packaging script on 2018-01-15
 project = backdrop
-version = 1.8.0
-timestamp = 1505542963
+version = 1.9.0
+timestamp = 1516072361
