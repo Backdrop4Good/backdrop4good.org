@@ -382,6 +382,12 @@ description = Make sure that backdrop_add_feed() works correctly with various co
 group = Common
 file = common.test
 
+[CommonBackdropSortUnitTest]
+name = backdrop_sort() tests
+description = Test that backdrop_sort() works correctly.
+group = Common
+file = common.test
+
 [ArrayDiffUnitTest]
 name = Array differences
 description = Performs tests on backdrop_array_diff_assoc_recursive().
@@ -952,6 +958,12 @@ description = Tests the form API url element.
 group = Form API
 file = form.test
 
+[FormTextareaTestCase]
+name = Form textarea
+description = Tests form textarea related functions.
+group = Form API
+file = form.test
+
 [SystemSettingsFormTest]
 name = System Settings Form
 description = Tests system_settings_form().
@@ -1324,7 +1336,7 @@ description = Test the file tokens.
 group = Token
 file = token.test
 
-; Added by Backdrop CMS packaging script on 2017-09-15
+; Added by Backdrop CMS packaging script on 2018-01-15
 project = backdrop
-version = 1.8.0
-timestamp = 1505542963
+version = 1.9.0
+timestamp = 1516072361
