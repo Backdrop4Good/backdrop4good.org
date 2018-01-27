@@ -32,6 +32,7 @@ hooks:
     deploy: |
         cd /app/web
         drush cc drush
+        drush updb -y
         drush bcim -y
         drush cc all
 
