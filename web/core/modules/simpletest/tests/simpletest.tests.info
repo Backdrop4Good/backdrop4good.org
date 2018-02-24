@@ -239,7 +239,7 @@ group = Common
 file = common.test
 
 [CommonURLUnitTestCase]
-name = URL checking tests
+name = URL checking unit tests
 description = Confirm URL parsing functions work correctly with various input.
 group = Common
 file = common.test
@@ -1336,7 +1336,7 @@ description = Test the file tokens.
 group = Token
 file = token.test
 
-; Added by Backdrop CMS packaging script on 2018-01-15
+; Added by Backdrop CMS packaging script on 2018-02-21
 project = backdrop
-version = 1.9.0
-timestamp = 1516072361
+version = 1.9.2
+timestamp = 1519258048
