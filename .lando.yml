@@ -10,6 +10,8 @@ services:
       - "mkdir -p /var/www/.platformsh && mkdir -p /var/www/.platformsh/bin"
       - "curl -fsSL -o /var/www/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.26.0/platform.phar"
       - "chmod ug+x /var/www/.platformsh/bin/platform"
+  database:
+    type: mariadb
   node-cli:
     type: node:6.10
     build:
